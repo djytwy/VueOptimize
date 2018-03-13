@@ -1,0 +1,1 @@
+from flask import Flaskfrom flask_script import Managerapp = Flask(__name__)manager = Manager(app)@app.route('/manager')def mymanager():    return '<h1>This is manager!</h1>'if __name__ == '__main__':    manager.run()
