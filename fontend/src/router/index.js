@@ -34,7 +34,7 @@ export default new Router({
 	    	component:vue_component
 	    },
 	    {
-	    	path:'/one',
+	    	path:'/vue_one',
 	    	name:'one',
 	    	components:{
 	    		default:one,

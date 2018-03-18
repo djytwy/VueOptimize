@@ -4,8 +4,12 @@
 	</div>
 </template>
 
-// <script>
-// 	export default {
-// 	  name: 'two',
-// 	}
-// </script>
+<script>
+	const twy = {
+		template:'<span>{{ message }}</span>',
+		props:['message']
+	}
+	export default {
+	  	name: 'two',
+	}
+</script>

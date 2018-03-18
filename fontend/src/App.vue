@@ -2,17 +2,10 @@
   <div id="app">
     <img src="./assets/logo.png">
     <v-app1></v-app1>
-    <!-- <v-list></v-list> -->
     <ul>
-      <!-- <li>
-        <router-link to="/one">/one</router-link>
-      </li>
       <li>
-        <router-link to="/two">/two</router-link>
+        <router-link to="/vue_one">/vue_one</router-link>
       </li>
-      <li>
-        <router-link to="/three">/three</router-link>
-      </li> -->
       <li>
         <router-link to="/vue_list">/vue-list</router-link>
       </li>
