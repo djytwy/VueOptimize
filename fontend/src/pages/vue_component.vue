@@ -27,6 +27,15 @@
 			<p v-for="msg in messages">{{ msg }}</p>
 			<button_message v-on:message="handleMessage"></button_message>
 		</div>
+
+		<p>Vue插槽的概念</p>
+		<my_computer>
+			<!-- <h1 slot="CPU">酷睿I7</h1>
+			<p>这是机箱</p>
+			<p>机箱里的各种部件</p>
+			<p slot="GPU">GTX 1080TI</p>
+			<p slot="memory">samsung32G</p> -->
+		</my_computer>
 	</div>
 </template>
 
@@ -92,6 +101,52 @@
 		}
 	}
 
+	const GPU = {
+		template:`<div>GTX1080TI</div>`
+	}
+
+	const CPU = {
+		template:`<div>酷睿I7-8990X</div>`
+	}
+
+	const memory = {
+		template:`<div>Samsung32G</div>`
+	}
+
+	const computer = {
+		template:
+		`<div class="container">
+		  <header>
+		    <slot name="header"></slot>
+		  </header>
+		  <main>
+		    <slot></slot>
+		  </main>
+		  <CPU>
+		    <slot name="CPU"></slot>
+		  </CPU>
+		</div>`,
+		components:{
+			'CPU':CPU
+		}
+
+	}
+
+	const my_computer = {
+		template:`<computer>
+		  <h1 slot="header">这里是header！</h1>
+
+		  <p>主要内容的一个段落。</p>
+		  <p>另一个主要段落。</p>
+
+		  <p slot="CPU"></p>
+		</computer>`,
+		components:{
+			'computer':computer
+		}
+	}
+
+
 	export default {
 		name:'vue_component',
 		components:{
@@ -100,7 +155,10 @@
 			'todo_item':todo_item,
 			'counter_num':counter_num,
 			'increment':increment,
-			'button_message':button_message
+			'button_message':button_message,
+			// 'app_slot':app_slot,
+			// 'GPU':GPU,
+			'my_computer':my_computer
 		},
 		data () {
 			return {

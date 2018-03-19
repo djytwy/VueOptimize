@@ -7,6 +7,7 @@ import two from '@/components/two'
 import three from '@/components/three'
 import Vue_list from '@/pages/Vue_list'
 import vue_component from '@/pages/vue_component'
+import bind_class from '@/pages/bind_class'
 
 Vue.use(Router)
 
@@ -32,6 +33,11 @@ export default new Router({
 	    	path:'/vue_component',
 	    	name:'vue_component',
 	    	component:vue_component
+	    },
+	    {
+	    	path:'/vue_class',
+	    	name:'vue_class',
+	    	component:bind_class
 	    },
 	    {
 	    	path:'/vue_one',
