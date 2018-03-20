@@ -8,6 +8,7 @@ import three from '@/components/three'
 import Vue_list from '@/pages/Vue_list'
 import vue_component from '@/pages/vue_component'
 import bind_class from '@/pages/bind_class'
+import vue_form from '@/pages/vue-form'
 
 Vue.use(Router)
 
@@ -38,6 +39,11 @@ export default new Router({
 	    	path:'/vue_class',
 	    	name:'vue_class',
 	    	component:bind_class
+	    },
+	    {
+	    	path:'/vue-form',
+	    	name:'vue-form',
+	    	component:vue_form
 	    },
 	    {
 	    	path:'/vue_one',

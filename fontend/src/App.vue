@@ -16,6 +16,9 @@
         <router-link to="/vue_class">class与style的绑定</router-link>
       </li>
       <li>
+        <router-link to="/vue-form">vue-form</router-link>
+      </li>
+      <li>
         <router-link to="/five">/five</router-link>
       </li>
     </ul>
