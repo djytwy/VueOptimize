@@ -11,6 +11,10 @@
 		<input type="radio" name="two" value="Two" v-model="pick">
 		<label for="two">Two</label>
 		<p>{{ pick }}</p>
+		<br>
+		<p>{{ isSuccess }}</p>
+		<p>{{ axios_message }}</p>
+		<button @click="sendMessage">点我发送消息！</button>
 	</div>
 </template>
 
@@ -23,20 +27,31 @@
 				message:'',
 				checked:false,
 				pick:'',
+				axios_message:'hello axios !!',
+				isSuccess:''
+			}
+		},
+		methods:{
+			sendMessage:function(){
+				const a = this.axios_message;
+				// let time = '' ;
+				axios.post('/test',{
+					"axios_message":this.axios_message
+				})
+
+				.then(function (response) {
+					console.log(response);
+					// time = response.data
+					this.isSuccess = response.data
+				}.bind(this))
+
+				.catch(function (error) {
+					console.log(error);
+					this.isSuccess = 'error'
+				});
 			}
 		}
 	}
-
-	axios.post('/user',{
-		firstName:'Fred',
-		lastName:'Flintstone'
-	})
-	.then(function (response) {
-		console.log(response);
-	})
-	.catch(function (error) {
-		console.log(error);
-	});
 </script>
 
 <style scoped>
