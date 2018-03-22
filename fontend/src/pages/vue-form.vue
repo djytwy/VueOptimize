@@ -15,6 +15,9 @@
 		<p>{{ isSuccess }}</p>
 		<p>{{ axios_message }}</p>
 		<button @click="sendMessage">点我发送消息！</button>
+		<br>
+		<input v-model="getMessage">
+		<span>Get message is {{ isMessage }}</span>
 	</div>
 </template>
 
@@ -28,7 +31,9 @@
 				checked:false,
 				pick:'',
 				axios_message:'hello axios !!',
-				isSuccess:''
+				isSuccess:'',
+				getMessage:'',
+				isMessage:''
 			}
 		},
 		methods:{
@@ -48,7 +53,26 @@
 				.catch(function (error) {
 					console.log(error);
 					this.isSuccess = 'error'
-				});
+				})
+			},
+
+			method1:function(){
+				var vm = this
+				axios.get('/get_message')
+
+				.then(function(response){
+					vm.isMessage = response.data.answer
+				})
+
+				.catch(function(error){
+					vm.isMessage = 'Error!Could not get message !!!'
+				})
+			}
+		},
+		watch:{
+			getMessage:function(){
+				console.log("获取请求的数据....")
+				this.method1()
 			}
 		}
 	}
