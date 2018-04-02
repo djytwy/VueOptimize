@@ -18,6 +18,7 @@
 		<br>
 		<input v-model="getMessage">
 		<span>Get message is {{ isMessage }}</span>
+		<button @click="mytest">点我测试跨域！</button>
 	</div>
 </template>
 
@@ -66,6 +67,18 @@
 
 				.catch(function(error){
 					vm.isMessage = 'Error!Could not get message !!!'
+				})
+			},
+
+			mytest: () =>{
+				axios.post("http://127.0.0.1:5000/api/testpost")
+
+				.then(function(response){
+					console.log(response)
+				})
+
+				.catch(function(error){
+					console.log("error!")
 				})
 			}
 		},

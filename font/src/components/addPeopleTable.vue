@@ -43,7 +43,7 @@
 		name:'addPeopleTable',
 		data(){
 			return {
-		  		tableData:[null],
+				// reverData:[{name:'zmz',work:'djy'},{name:'zmz',work:'djy'},{name:'zmz',work:'djy'}],
 		  		responseData:[null],
 			} 
 		},
@@ -71,6 +71,19 @@
 
 			deleteRow(index, rows) {
 	        	rows.splice(index, 1);
+
+	        	axios.post('/api/hidePeople',{
+	        		"hide":true
+	        	})
+
+	        	.then(function(response){
+	        		console.log('修改成功	！')
+	        		console.log(response)
+	        	})
+
+	        	.catch(function(error){
+	        		console.log("Error!!!")
+	        	})
 	      	},
 
 		},
