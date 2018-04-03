@@ -118,14 +118,17 @@
 		          		"password": this.ruleForm2.password,"phone": this.ruleForm2.phone
 		          	}
 
-		          	console.log(PeopleMessage)
-					axios.post('api/addPeople/',{
+					// axios.post('api/addPeople/',{
+					// 	"PeopleMessage":PeopleMessage
+					// })
+
+					axios.post('http://127.0.0.1:5000/api/addPeople/',{
 						"PeopleMessage":PeopleMessage
 					})
 
 					.then(function (response) {
 						console.log("发送成功！");
-						resetForm(formName)
+						console.log(this)
 					})
 
 					.catch(function (error) {
@@ -139,6 +142,7 @@
 		          }
 		        });
 		    },
+
 	      	resetForm(formName) {
 	        	this.$refs[formName].resetFields();
 	      	},
