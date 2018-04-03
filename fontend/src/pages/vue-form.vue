@@ -58,6 +58,7 @@
 
 			method1:function(){
 				var vm = this
+				console.log("获取请求的数据222....")
 				axios.get('/get_message')
 
 				.then(function(response){
