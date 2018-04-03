@@ -1,25 +1,13 @@
 <template>
   <div id="app">
-    <!-- <img src="./assets/logo.png"> -->
-    
-    <addPeopleForm/>
-    <addPeopleTable/>
-<!--     <router-view></router-view> -->
+      <router-view></router-view>
   </div>
 </template>
 
 <script>
-import addPeople from './components/add_people'
-import addPeopleForm from './components/addPeopleForm'
-import addPeopleTable from './components/addPeopleTable'
 
 export default {
   name: 'App',
-  components: {
-    addPeople,
-    addPeopleForm,
-    addPeopleTable
-  }
 }
 </script>
 

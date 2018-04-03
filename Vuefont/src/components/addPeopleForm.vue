@@ -119,8 +119,6 @@
 			          		"password": this.ruleForm2.password,"phone": this.ruleForm2.phone
 			          	}
 
-						
-
 						const success = this.success
 						const res 	  =	this.resetForm
 
