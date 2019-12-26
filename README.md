@@ -1,5 +1,24 @@
-# vue-flask的练习
-基于Vue、Vue-router、flask的前后端分离项目
+# myapp
 
-2018年4月6日更新：
-前端中增加了一个界面，及其逻辑。前端通过axios与后端交流数据。采用API接口向前端提供数据，在Django+restframwork+django-cors-headers的环境中调试通过。
+## Project setup
+```
+yarn install
+```
+
+### Compiles and hot-reloads for development
+```
+yarn serve
+```
+
+### Compiles and minifies for production
+```
+yarn build
+```
+
+### Lints and fixes files
+```
+yarn lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
