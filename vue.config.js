@@ -7,13 +7,16 @@ const cdnDomian = '/' // cdn域名，如果有cdn修改成对应的cdn
 const name = 'myApp' // page title
 const IS_PRODUCTION = process.env.NODE_ENV === 'production'
 const cdn = {
-  css: [],
+  css: [
+    'https://unpkg.com/element-ui/lib/theme-chalk/index.css'
+  ],
   js: [
     'https://cdn.bootcss.com/vue/2.6.10/vue.min.js',
     'https://cdn.bootcss.com/vue-router/3.0.3/vue-router.min.js',
     'https://cdn.bootcss.com/vuex/3.1.0/vuex.min.js',
     'https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js',
-    'https://cdn.bootcss.com/js-cookie/2.2.1/js.cookie.min.js'
+    'https://cdn.bootcss.com/js-cookie/2.2.1/js.cookie.min.js',
+    'https://unpkg.com/element-ui/lib/index.js'
   ]
 }
 
@@ -22,7 +25,8 @@ const externals = {
   'vue-router': 'VueRouter',
   vuex: 'Vuex',
   axios: 'axios',
-  'js-cookie': 'Cookies'
+  'js-cookie': 'Cookies',
+  element: 'ElementUI'
 }
 
 function resolve (dir) {
@@ -188,7 +192,7 @@ module.exports = {
     sourceMap: false,
     // css预设器配置项
     // 启用 CSS modules for all css / pre-processor files.
-    requireModuleExtension: false,
+    requireModuleExtension: true,
     loaderOptions: {
       sass: {
         /* 这里要注意，以前的写法是：
