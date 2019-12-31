@@ -14,4 +14,4 @@ after_success:
 - echo "success !"
 - git add dist
 - git commit -m"add dist"
-- git push --quiet --force https://$REPO_TOKEN@github.com/djytwy/Vue_myserver.git release
+- git push --quiet --force https://$REPO_TOKEN@github.com/djytwy/Vue_myserver.git master
