@@ -11,6 +11,8 @@ install:
 script:
 - npm run build
 after_success:
+- git checkout release
+- git branch
 - git add dist
 - git commit -m"add dist"
 - git push -f "https://${REPO_TOKEN}@github.com/djytwy/Vue_myserver.git" release
