@@ -161,9 +161,8 @@ module.exports = {
         }
       )
     if (IS_PRODUCTION) {
-      console.log(process.platform)
-      console.log(process.platform)
-      config.plugin('analyzer').use(BundleAnalyzerPlugin)
+      if(process.platform !== 'linux')
+        config.plugin('analyzer').use(BundleAnalyzerPlugin)
       config.plugin('html').tap(args => {
         args[0].cdn = cdn
         return args
