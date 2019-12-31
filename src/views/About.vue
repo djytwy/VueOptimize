@@ -10,7 +10,9 @@
 <script>
 import '@/style/_variables.scss'
 export default {
-  
+  mounted() {
+    console.log('测试一下优化console.log')
+  }
 }
 </script>
 

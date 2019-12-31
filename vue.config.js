@@ -1,5 +1,6 @@
 const path = require('path')
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const port = process.env.port || process.env.npm_config_port || 8888
 const cdnDomian = '/' // cdn域名，如果有cdn修改成对应的cdn
@@ -73,7 +74,20 @@ module.exports = {
         'assets': resolve('src/assets'), // 静态资源
         'style': resolve('src/style') // 通用样式
       }
-    }
+    },
+    optimization: IS_PRODUCTION ? {
+      minimizer: [
+        new TerserPlugin({ 
+          terserOptions: { 
+            sourceMap:false,
+            compress: { 
+              drop_console: true,
+              drop_debugger: true 
+            } 
+          } 
+        })
+      ]
+    } : {}
   },
   chainWebpack (config) {
     config.plugins.delete('preload') // TODO: need test
