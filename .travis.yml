@@ -1,0 +1,12 @@
+language: node
+node_js: stable
+branches:
+    only:
+    - release
+install:
+- npm install
+script:
+- npm run build
+after_success:
+- echo "success !"
+- git status
