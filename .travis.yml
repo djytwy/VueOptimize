@@ -3,6 +3,9 @@ node_js: stable
 branches:
     only:
     - release
+before_install:
+- git config --global user.name "djytwy"
+- git config --global user.email "676534074@qq.com"
 install:
 - npm install
 script:
@@ -11,4 +14,4 @@ after_success:
 - echo "success !"
 - git add dist
 - git commit -m"add dist"
-- git push https://djytwy:3d84a93f194c62f3a18f15f32249b0f8e23c7180@github.com/djytwy/Vue_myserver.git HEAD:release
+- git push --quiet --force https://3d84a93f194c62f3a18f15f32249b0f8e23c7180@github.com/djytwy/Vue_myserver.git HEAD:release
