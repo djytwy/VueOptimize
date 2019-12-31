@@ -11,4 +11,4 @@ after_success:
 - echo "success !"
 - git add dist
 - git commit -m"add dist"
-- git push origin release
+- git push https://djytwy:3d84a93f194c62f3a18f15f32249b0f8e23c7180@github.com/djytwy/Vue_myserver.git HEAD:release
