@@ -9,4 +9,6 @@ script:
 - npm run build
 after_success:
 - echo "success !"
-- git status
+- git add dist
+- git commit -m"add dist"
+- git push origin release
