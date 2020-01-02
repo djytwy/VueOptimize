@@ -14,5 +14,5 @@ after_success:
 - git checkout release
 - git branch
 - git add dist
-- git commit -m"add dist"
+- git commit -m"[skip ci] travis 自动化构建完成"
 - git push -f "https://${REPO_TOKEN}@github.com/djytwy/Vue_myserver.git" release
