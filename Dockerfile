@@ -1,6 +1,6 @@
 FROM nginx:latest
 MAINTAINER djytwy
 
-RUN echo "test release !"
+COPY ./dist /home/html
 
 EXPOSE 80
