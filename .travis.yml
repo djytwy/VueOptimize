@@ -19,7 +19,9 @@ after_success:
 # - git add dist
 # - git commit -m"[skip ci] travis 自动化构建完成"
 # - git push -f "https://${REPO_TOKEN}@github.com/djytwy/Vue_myserver.git" release
-- docker build -t djytwy/vue_myserver .
-- docker run -d -p 80:80 djytwy/vue_myserver
+- docker build -t djytwy/vue_server .
+- docker run -d -p 80:80 djytwy/vue_server
 - docker ps -a
 - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USER" --password-stdin
+- docker push djytwy/vue_server:1.0
+- echo "build over"
