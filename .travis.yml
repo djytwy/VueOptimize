@@ -1,8 +1,10 @@
 language: node
 node_js: stable
+services:
+    - docker
 branches:
     only:
-    - release
+    - master
 before_install:
 - git config --global user.name "djytwy"
 - git config --global user.email "676534074@qq.com"
@@ -11,8 +13,13 @@ install:
 script:
 - npm run build
 after_success:
-- git checkout release
-- git branch
-- git add dist
-- git commit -m"[skip ci] travis 自动化构建完成"
-- git push -f "https://${REPO_TOKEN}@github.com/djytwy/Vue_myserver.git" release
+# 自动化构建提交
+# - git checkout release
+# - git branch
+# - git add dist
+# - git commit -m"[skip ci] travis 自动化构建完成"
+# - git push -f "https://${REPO_TOKEN}@github.com/djytwy/Vue_myserver.git" release
+- docker build -t djytwy/Vue_myserver .
+- docker run -d -p 80:80 djytwy/Vue_myserver
+- docker ps -a
+- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
