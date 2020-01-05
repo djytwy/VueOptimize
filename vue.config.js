@@ -8,7 +8,7 @@ const name = 'myApp' // page title
 const IS_PRODUCTION = process.env.NODE_ENV === 'production'
 const cdn = {
   css: [
-    'https://unpkg.com/element-ui/lib/theme-chalk/index.css'
+    'https://cdn.bootcss.com/element-ui/2.12.0/theme-chalk/index.css'
   ],
   js: [
     'https://cdn.bootcss.com/vue/2.6.10/vue.min.js',
@@ -16,7 +16,7 @@ const cdn = {
     'https://cdn.bootcss.com/vuex/3.1.0/vuex.min.js',
     'https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js',
     'https://cdn.bootcss.com/js-cookie/2.2.1/js.cookie.min.js',
-    'https://unpkg.com/element-ui/lib/index.js'
+    'https://cdn.bootcss.com/element-ui/2.12.0/index.js'
   ]
 }
 
