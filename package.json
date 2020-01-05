@@ -23,6 +23,7 @@
     "@vue/cli-service": "^4.1.0",
     "amfe-flexible": "^2.2.1",
     "babel-eslint": "^10.0.3",
+    "babel-plugin-component": "^1.1.1",
     "body-parser": "^1.19.0",
     "chalk": "^2.4.2",
     "chokidar": "^3.2.1",
