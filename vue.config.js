@@ -161,8 +161,10 @@ module.exports = {
         }
       )
     if (IS_PRODUCTION) {
-      if(process.platform !== 'linux')
+      // 这里主要避免自动化构建的时候打开大小分析web
+      if(process.platform !== 'linux') {
         config.plugin('analyzer').use(BundleAnalyzerPlugin)
+      }
       config.plugin('html').tap(args => {
         args[0].cdn = cdn
         return args
