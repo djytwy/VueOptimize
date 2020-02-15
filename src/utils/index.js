@@ -1,4 +1,6 @@
 /**
+ * 工具类
+ * 2020-2-14 田文杨
  * @param {string} url
  * @returns {Object}
  */

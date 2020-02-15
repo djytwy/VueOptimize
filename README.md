@@ -1,24 +1,5 @@
-# myapp
 
-## Project setup
-```
-yarn install
-```
+#### VueOptimze
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+一个集成了element，优化了打包体积，优化了各种配置的Vue前端架子。
+使用Vuex完成了登录认证、鉴权，后端使用flask框架做测试。

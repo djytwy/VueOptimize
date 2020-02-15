@@ -1,10 +1,15 @@
+/* 
+  优化vue.config.js
+  打包优化、mock、指向、svg等
+  2020-2-14 田文杨
+*/
 const path = require('path')
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const port = process.env.port || process.env.npm_config_port || 8888
 const cdnDomian = '/' // cdn域名，如果有cdn修改成对应的cdn
-const name = 'myApp' // page title
+const name = 'data_center' // page title
 const IS_PRODUCTION = process.env.NODE_ENV === 'production'
 const cdn = {
   css: [
@@ -47,18 +52,19 @@ module.exports = {
       warnings: false,
       errors: true
     },
-    proxy: {
-      // change xxx-api/login => mock/login
-      // detail: https://cli.vuejs.org/config/#devserver-proxy
-      [process.env.VUE_APP_BASE_API]: {
-        target: `http://127.0.0.1:${port}/mock`,
-        changeOrigin: true,
-        pathRewrite: {
-          ['^' + process.env.VUE_APP_BASE_API]: ''
-        }
-      }
-    },
-    after: require('./mock/mock-server.js')
+    // proxy暂时注释掉先
+    // proxy: {
+    //   // change xxx-api/login => mock/login
+    //   // detail: https://cli.vuejs.org/config/#devserver-proxy
+    //   [process.env.VUE_APP_BASE_API]: {
+    //     target: `http://127.0.0.1:${port}/mock`,
+    //     changeOrigin: true,
+    //     pathRewrite: {
+    //       ['^' + process.env.VUE_APP_BASE_API]: ''
+    //     }
+    //   }
+    // },
+    // after: require('./mock/mock-server.js')
   },
   configureWebpack: {
     // provide the app's title in webpack's name field, so that

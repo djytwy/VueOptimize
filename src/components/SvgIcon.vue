@@ -1,4 +1,5 @@
 <template>
+  <!-- svg组件  -->
   <div v-if="isExternal" :style="styleExternalIcon" class="svg-external-icon svg-icon" v-on="$listeners" />
   <svg v-else :class="svgClass" aria-hidden="true" v-on="$listeners">
     <use :xlink:href="iconName" />
@@ -10,7 +11,13 @@
 import { isExternal } from '@/utils/validate'
 
 export default {
+  /* 
+    使用SVG作为呈现的ICON组件
+    使用方式: <svg-icon iconClass="example" iconName="example" />
+    2020-2-14 田文杨
+   */
   name: 'SvgIcon',
+  // 两个参数用于确定在icons文件夹中定svg
   props: {
     iconClass: {
       type: String,
