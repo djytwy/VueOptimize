@@ -21,10 +21,15 @@ if(process.env.NODE_ENV === 'development') {
   import('element-ui').then(_ => {
     Vue.use(_)
   }) 
-}  
-
-new Vue({
-  router,
-  store,
-  render: h => h(App)
-}).$mount('#app')
+  new Vue({
+    router,
+    store,
+    render: h => h(App)
+  }).$mount('#app')
+} else {
+  new Vue({
+    router,
+    store,
+    render: h => h(App)
+  }).$mount('#app')
+} 
