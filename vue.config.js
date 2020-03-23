@@ -195,7 +195,7 @@ module.exports = {
   },
   css: {
     // 是否使用css分离插件 ExtractTextPlugin
-    extract: !!IS_PRODUCTION,
+    extract: IS_PRODUCTION,
     // 开启 CSS source maps?
     sourceMap: false,
     // css预设器配置项
