@@ -6,7 +6,7 @@ import store from '@/store'
 import 'element-ui/lib/theme-chalk/index.css'
 import SvgIcon from 'components/SvgIcon' // SVG
 import '@/icons' // icon
-import '@/utils/permission'
+import '@/utils/permission' // 权限管理
 
 /* 
   优化并定义各种将要使用工具
@@ -15,6 +15,10 @@ import '@/utils/permission'
 
 Vue.config.productionTip = false
 Vue.component('svg-icon', SvgIcon)
+
+// 封装请求
+import request from './utils/request'
+Vue.prototype.$http = request
 
 // 性能优化(动态引入elementUI)
 if(process.env.NODE_ENV === 'development') {
